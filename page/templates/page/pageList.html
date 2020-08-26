@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    
+</head>
+
+
+
+
+<body>
+    <h1>page</h1>
+    <img src="{% static 'images/shoes.jpg' %}" alt="">
+    <ul>
+        {% for page in pages %}
+        <p>{{page.title}}</p>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for i in paginator.page_range %}
+        <li>
+            <a href="?page={{i}}">{{i}}</a>
+        </li>
+
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
